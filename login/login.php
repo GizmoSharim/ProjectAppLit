@@ -5,7 +5,7 @@
 header('Content-Type: application/json');
 
 // IMPORTANTE: O caminho '../' volta uma pasta para achar o conexaoBanco.php
-require 'conexao.db/conexaoBanco.php'; 
+require '../conexao.db/conexaoBanco.php'; 
 
 // 1. Recebe os dados enviados pelo Javascript (login.js)
 $data = json_decode(file_get_contents("php://input"));
