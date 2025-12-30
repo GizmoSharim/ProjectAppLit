@@ -1,12 +1,13 @@
-/* Reset e Variáveis */
+/* style.css */
+
 :root {
-    --primary-green: #15803d; /* Verde botão */
+    --primary-green: #15803d;
     --primary-hover: #166534;
     --bg-color: #f3f4f6;
     --card-bg: #ffffff;
     --text-dark: #1f2937;
     --text-gray: #6b7280;
-    --border-radius: 12px;
+    --border-radius: 16px;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
@@ -15,11 +16,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-dark);
+    padding-bottom: 2rem;
 }
 
 /* Navbar */
@@ -30,12 +33,16 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 800;
+    font-size: 1.4rem;
     color: var(--primary-green);
+    letter-spacing: -0.5px;
 }
 
 .nav-links {
@@ -46,41 +53,38 @@ body {
 
 .nav-links li {
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-gray);
-    position: relative;
+    font-size: 0.95rem;
+    transition: color 0.2s;
 }
 
-.nav-links li.active, .nav-links li:hover {
-    color: var(--text-dark);
+.nav-links li:hover, .nav-links li.active {
+    color: var(--primary-green);
 }
 
-.nav-links li.active::after {
-    content: '';
-    position: absolute;
-    bottom: -22px; /* Ajuste para alinhar com a borda da nav */
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary-green);
-    border-radius: 2px 2px 0 0;
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .avatar {
-    width: 35px;
-    height: 35px;
-    background-color: #e5e7eb;
+    width: 40px;
+    height: 40px;
+    background-color: #dcfce7;
+    color: var(--primary-green);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: var(--text-gray);
+    font-size: 1.1rem;
 }
 
-/* Layout Principal */
+/* Container Principal */
 .container {
-    max-width: 1200px;
+    max-width: 900px; /* Diminuí um pouco a largura máxima para ficar mais elegante com 1 card só */
     margin: 0 auto;
     padding: 2rem;
 }
@@ -91,17 +95,13 @@ body {
 
 .welcome-header h1 {
     font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    color: var(--text-dark);
 }
 
-.welcome-header p {
-    color: var(--text-gray);
-}
-
-/* Grid System */
+/* Grid - ALTERADO PARA 1 COLUNA */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Ocupa 100% da largura */
     gap: 1.5rem;
 }
 
@@ -111,94 +111,64 @@ body {
     border-radius: var(--border-radius);
     padding: 1.5rem;
     box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
+    border: 1px solid #f0fdf4;
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .card-header h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
 }
 
 .link-action {
     color: var(--primary-green);
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 
-/* Listas (Tarefas e Recursos) */
-ul {
-    list-style: none;
-}
-
-ul li {
+/* Listas */
+ul.task-list li {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #f3f4f6;
-    color: var(--text-gray);
-    font-size: 0.9rem;
-}
-
-ul li:last-child {
-    border-bottom: none;
-}
-
-ul li i {
-    font-size: 1.2rem;
-}
-
-/* Botões */
-.actions-container {
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
-}
-
-.btn {
-    border: none;
-    padding: 0.8rem;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    width: 100%;
-}
-
-.btn-primary {
-    background-color: var(--primary-green);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-hover);
-}
-
-.btn-secondary {
-    background-color: #e5e7eb;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f3f4f6;
     color: var(--text-dark);
 }
 
-.btn-secondary:hover {
-    background-color: #d1d5db;
+ul li i {
+    font-size: 1.4rem;
+    color: var(--text-gray);
 }
 
-/* Responsividade */
+/* Responsividade Mobile */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Simplificação para mobile */
+    .navbar {
+        padding: 1rem;
+        flex-wrap: wrap;
     }
-    
-    .dashboard-grid {
-        grid-template-columns: 1fr;
+
+    .nav-links {
+        order: 3; 
+        width: 100%;
+        justify-content: space-between;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .welcome-header h1 {
+        font-size: 1.5rem;
     }
 }
