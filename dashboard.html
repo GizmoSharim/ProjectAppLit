@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Colaborador</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MinhaEmpresa</div>
+        <ul class="nav-links">
+            <li class="active">Dashboard</li>
+            <li>Recursos</li>
+            <li>Tasks</li>
+        </ul>
+        <div class="user-profile">
+            <div class="avatar">C</div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="welcome-header">
+            <h1>Olá, Colaborador!</h1>
+            <p>Você tem <strong class="highlight">3 tarefas</strong> pendentes para hoje. Tenha um ótimo dia!</p>
+        </header>
+
+        <div class="dashboard-grid">
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Tarefas Pendentes</h3>
+                    <a href="#" class="link-action">Ver todas</a>
+                </div>
+                <ul class="task-list">
+                    <li>
+                        <i class="ph ph-calendar-blank"></i>
+                        <span>Teste de usabilidade</span>
+                    </li>
+                    <li>
+                        <i class="ph ph-warning-circle" style="color: #eab308;"></i>
+                        <span>Análise preditiva-site-tipo</span>
+                    </li>
+                    <li>
+                        <i class="ph ph-users"></i>
+                        <span>Reunião com a equipe</span>
+                    </li>
+                    <li>
+                        <i class="ph ph-file-text"></i>
+                        <span>Relatório final de projeto</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Ações Rápidas</h3>
+                </div>
+                <div class="actions-container">
+                    <button class="btn btn-primary" id="btnNovaTarefa">
+                        Criar Nova Tarefa
+                    </button>
+                    <button class="btn btn-secondary" id="btnRelatorio">
+                        Gerar Relatório
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recursos Acessados Recentemente</h3>
+                </div>
+                <ul class="resource-list">
+                    <li>
+                        <i class="ph ph-file-pdf"></i>
+                        <span>Documento de Requisitos</span>
+                    </li>
+                    <li>
+                        <i class="ph ph-folder-open"></i>
+                        <span>Guia de Estilo de Interface</span>
+                    </li>
+                    <li>
+                        <i class="ph ph-chart-bar"></i>
+                        <span>Análise Competitiva Q1</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="api.js"></script>
+</body>
+</html>
