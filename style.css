@@ -171,4 +171,21 @@ ul li i {
     .welcome-header h1 {
         font-size: 1.5rem;
     }
+    
+}
+.user-points {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
+    color: #b45309; /* Cor Dourada/Bronze */
+    background-color: #fffbeb;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #fcd34d;
+}
+
+.user-points i {
+    color: #f59e0b; /* Estrela amarela */
 }
