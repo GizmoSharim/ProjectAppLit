@@ -189,3 +189,159 @@ ul li i {
 .user-points i {
     color: #f59e0b; /* Estrela amarela */
 }
+
+/* --- ESTILOS DO CATÁLOGO --- */
+
+.catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    gap: 10px;
+    width: 300px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+/* Grid do Catálogo */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cartão do Produto */
+.product-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid #f3f4f6;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-green);
+}
+
+.product-image {
+    height: 150px;
+    background-color: #f0fdf4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-green);
+}
+
+.product-image i {
+    font-size: 4rem;
+}
+
+.product-info {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.product-info p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Empurra para o fundo do card */
+}
+
+.price {
+    font-weight: 800;
+    color: #b45309;
+    font-size: 1.1rem;
+}
+
+.btn-buy {
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-buy:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Mobile Catálogo */
+@media (max-width: 768px) {
+    .catalog-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .search-bar {
+        width: 100%;
+    }
+}
+/* --- Estilo para itens que o usuário NÃO pode comprar --- */
+
+/* Quando o cartão tiver a classe 'indisponivel' */
+.product-card.indisponivel {
+    opacity: 0.5; /* Deixa meio transparente */
+    filter: grayscale(80%); /* Tira quase toda a cor */
+    background-color: #e5e7eb; /* Fundo mais cinza */
+    cursor: not-allowed; /* Mostra cursor de bloqueio */
+    box-shadow: none; /* Remove a sombra para parecer "apagado" */
+}
+
+/* Remove o efeito de hover (levantar) quando indisponível */
+.product-card.indisponivel:hover {
+    transform: none;
+    border-color: transparent;
+}
+
+/* Estilo do botão dentro de um cartão indisponível */
+.product-card.indisponivel .btn-buy {
+    background-color: #9ca3af; /* Botão cinza */
+    color: #4b5563;
+    pointer-events: none; /* IMPEDE O CLIQUE NO BOTÃO */
+    cursor: not-allowed;
+}
+
+/* Opcional: Mudar o texto do botão */
+.product-card.indisponivel .btn-buy::after {
+    content: " (Faltam Pontos)";
+    font-size: 0.8em;
+}

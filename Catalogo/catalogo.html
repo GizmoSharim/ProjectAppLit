@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Prêmios</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">LITIARA</div>
+        <ul class="nav-links">
+            <li onclick="window.location.href='../dashboard.html'">Dashboard</li>
+            <li class="active">Catálogo</li>
+            <li>Tasks</li>
+        </ul>
+        <div class="user-profile">
+            <div class="user-points">
+                <i class="ph ph-star-fill"></i>
+                <span id="pontosDisplay">...</span> pts
+            </div>
+            <div class="avatar">...</div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="catalog-header">
+            <div>
+                <h1>Troque seus Pontos</h1>
+                <p>Aproveite suas recompensas exclusivas.</p>
+            </div>
+            
+            <div class="search-bar">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" placeholder="Buscar recompensa...">
+            </div>
+        </header>
+
+        <div class="catalog-grid">
+    
+    <div class="product-card" data-price="50">
+        <div class="product-image"><i class="ph ph-coffee"></i></div>
+        <div class="product-info">
+            <h3>Vale Café</h3>
+            <p>Um café expresso na cafeteria parceira.</p>
+            <div class="price-row">
+                <span class="price">50 pts</span>
+                <button class="btn-buy" onclick="comprarItem(50, 'Vale Café')">Resgatar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-price="500">
+        <div class="product-image"><i class="ph ph-t-shirt"></i></div>
+        <div class="product-info">
+            <h3>Camiseta Exclusiva</h3>
+            <p>Camiseta da empresa edição limitada 2025.</p>
+            <div class="price-row">
+                <span class="price">500 pts</span>
+                <button class="btn-buy" onclick="comprarItem(500, 'Camiseta')">Resgatar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-price="1200">
+        <div class="product-image"><i class="ph ph-headphones"></i></div>
+        <div class="product-info">
+            <h3>Fone Bluetooth</h3>
+            <p>Fone de ouvido com cancelamento de ruído.</p>
+            <div class="price-row">
+                <span class="price">1200 pts</span>
+                <button class="btn-buy" onclick="comprarItem(1200, 'Fone')">Resgatar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-price="2000">
+        <div class="product-image"><i class="ph ph-ticket"></i></div>
+        <div class="product-info">
+            <h3>Day Off</h3>
+            <p>Um dia de folga remunerada extra.</p>
+            <div class="price-row">
+                <span class="price">2000 pts</span>
+                <button class="btn-buy" onclick="comprarItem(2000, 'Day Off')">Resgatar</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+    </main>
+
+   <script src="catalogo.js"></script>
+</body>
+</html>
