@@ -10,8 +10,8 @@
 ## 🖼️ Telas do Projeto
 
 <div align="center">
-  <img src="https://via.placeholder.com/600x300?text=Dashboard+Screen" alt="Dashboard" width="400">
-  <img src="https://via.placeholder.com/600x300?text=Catalogo+Screen" alt="Catálogo" width="400">
+  <img src="img/tela_das_recompensas.jpg" alt="Dashboard" width="400">
+  <img src="img/Tela_das_tarefas.jpg" alt="Catálogo" width="400">
 </div>
 
 ## 📄 Sobre
