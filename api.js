@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cpfSalvo = localStorage.getItem('cpfUsuario'); // <--- Pega o CPF salvo
 
     if (nomeSalvo && cpfSalvo) {
-        // 1. Mostra o nome (Visual imediato)
+        // 1. Mostra o nome (Visual imediato) abacaxi
         const primeiroNome = nomeSalvo.split(' ')[0];
         document.getElementById('welcomeMessage').textContent = `Olá, ${primeiroNome}!`;
         document.querySelector('.avatar').textContent = primeiroNome.charAt(0).toUpperCase();
